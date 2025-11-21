@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kirim Naskah – Refleksi Malam</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="night-mode">
+
+  <canvas id="stars"></canvas>
+  <audio id="ambient" src="assets/night-ambience.mp3" loop></audio>
+
+  <div id="navbar"></div>
+
+  <main>
+    <h1>Kirim Naskah</h1>
+    <p>Silakan kirim tulisanmu melalui form di bawah.</p>
+
+    <form id="naskahForm">
+      <input type="text" placeholder="Nama Penulis" required>
+      <input type="text" placeholder="Judul Naskah" required>
+      <textarea placeholder="Isi tulisan..." rows="6"></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+  </main>
+
+  <script src="transition.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<article class="renungan-detail" data-slug="belajar-dari-kegelapan">
+  <h1>Belajar dari Kegelapan</h1>
+  <p class="meta">20 November 2025</p>
+  <p>Isi renunganmu...</p>
+</article>
+
+<section id="comments-section">
+  <h3>Komentar</h3>
+
+  <form id="comment-form">
+    <input type="text" id="name" placeholder="Nama kamu" required>
+    <textarea id="content" placeholder="Tulis komentar..." required></textarea>
+
+    <!-- buat reply -->
+    <input type="hidden" id="parent_id">
+
+    <button type="submit">Kirim</button>
+  </form>
+
+  <div id="comments-list"></div>
+</section>
+
+<!-- Supabase CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="komentar.js"></script>

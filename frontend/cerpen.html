@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Cerpen</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background efek -->
+  <canvas id="stars"></canvas>
+  <audio id="ambient" src="assets/night-ambience.mp3" loop></audio>
+
+  <!-- Konten cerpen (isi tulisanmu taruh di sini) -->
+  <div id="content">
+    <h1>Judul Cerpen</h1>
+    <p>Isi cerpenmu di sini...</p>
+  </div>
+
+  <!-- Container komentar -->
+  <div id="komentar-container"></div>
+
+  <!-- Script utama -->
+  <script src="transition.js"></script>
+  <script src="komentar.js"></script>
+
+  <!-- Load file komentar.html -->
+  <script>
+    fetch("komentar.html")
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById("komentar-container").innerHTML = html;
+      })
+      .catch(error => {
+        console.error("Gagal load komentar:", error);
+      });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri – Refleksi Malam</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="galeri.js"></script>
+</head>
+
+<body class="night-mode">
+
+  <canvas id="stars"></canvas>
+  <audio id="ambient" src="assets/night-ambience.mp3" loop></audio>
+
+  <div id="navbar"></div>
+
+  <section class="gallery-section">
+    <h1>Galeri Refleksi Malam</h1>
+    <p>Gambar dan momen yang lahir dari keheningan malam.</p>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Gambar dimuat lewat JS -->
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <span id="closeLightbox">&times;</span>
+    <img id="lightboxImage" src="" alt=""/>
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <!-- Komentar -->
+  <div id="komentar-container"></div>
+
+  <footer>© Refleksi Malam 2025</footer>
+
+  <script src="transition.js"></script>
+  <script src="komentar.js"></script>
+
+  <script>
+    fetch("komentar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("komentar-container").innerHTML = html;
+      });
+  </script>
+
+</body>
+</html>

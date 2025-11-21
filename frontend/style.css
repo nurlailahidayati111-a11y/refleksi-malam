@@ -1,0 +1,429 @@
+/* ===============================
+   🌙 GLOBAL STYLE
+================================= */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: "Playfair Display", serif;
+  transition: background 1s ease, color 0.8s ease, opacity 0.6s ease;
+}
+
+body {
+  background: linear-gradient(180deg, #0a0f2c, #1b1b3a);
+  color: #f1ead6;
+  line-height: 1.7;
+}
+
+.day-mode {
+  background: linear-gradient(180deg, #f8f9fa, #e3e7ed);
+  color: #222;
+}
+
+/* ===============================
+   🌌 BACKGROUND STARS
+================================= */
+
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.night-mode #stars {
+  background: radial-gradient(ellipse at bottom, #0a0f2c 0%, #000 100%);
+}
+
+.day-mode #stars {
+  background: linear-gradient(to top, #87ceeb, #fff);
+}
+
+/* ===============================
+   🌙 TRANSISI HALAMAN
+================================= */
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* ===============================
+   🔗 NAVBAR
+================================= */
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(10, 10, 30, 0.7);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: gold;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #fff;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #111;
+  min-width: 160px;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #f1ead6;
+}
+
+.dropdown-content a:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ===============================
+   📜 HALAMAN TULISAN
+================================= */
+
+.article-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(0,0,0,0.4);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.article-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.article-content p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+/* ===============================
+   ✨ CARD UMUM
+================================= */
+
+.card {
+  background: rgba(0,0,0,0.5);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 12px;
+}
+
+/* ===============================
+   🖼 GALERI
+================================= */
+
+.gallery-section {
+  text-align: center;
+  padding: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 15px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item:hover {
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+/* Lightbox */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+#closeLightbox {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+#lightboxCaption {
+  margin-top: 1rem;
+  color: #f1ead6;
+  font-style: italic;
+}
+
+/* ===============================
+   🎧 PODCAST
+================================= */
+
+.podcast-section {
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.podcast-item {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 1.2rem 0;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  transition: transform 0.3s ease;
+}
+
+.podcast-item:hover {
+  transform: translateY(-5px);
+}
+
+.podcast-item audio {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* ===============================
+   💬 KOMENTAR
+================================= */
+
+#komentar-section {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.35);
+  border-radius: 16px;
+}
+
+#commentForm input,
+#commentForm textarea {
+  width: 100%;
+  margin-bottom: 0.8rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  border-radius: 8px;
+  color: #f1ead6;
+  font-family: inherit;
+}
+
+#commentForm button {
+  padding: 0.6rem 1.2rem;
+  background: gold;
+  border: none;
+  color: #111;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.comment-item {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background: rgba(0,0,0,0.4);
+  border-left: 3px solid gold;
+  border-radius: 6px;
+}
+
+/* ===============================
+   🔐 ADMIN
+================================= */
+
+.admin-section {
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.login-box {
+  background: rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  margin-top: 2rem;
+}
+
+.login-box input {
+  margin: 0.4rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: none;
+  width: 90%;
+}
+
+.login-box button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  background: gold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ===============================
+   🔘 BUTTON
+================================= */
+
+button,
+.dropbtn {
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover,
+.dropbtn:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.1);
+}
+
+/* ===============================
+   🧾 FOOTER
+================================= */
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  color: white;
+}
+
+.nav-icon {
+  font-size: 22px;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.renungan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.renungan-item {
+  background: #111;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.renungan-item:hover {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.renungan-item h3 {
+  margin-bottom: 6px;
+}
+
+.renungan-item span {
+  font-size: 12px;
+  color: #aaa;
+}
+
+#comments-section {
+  margin-top: 60px;
+}
+
+.comment-item {
+  border-left: 2px solid #555;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.comment-item small {
+  color: #999;
+}
+
+.reply-btn {
+  background: none;
+  border: none;
+  color: #80aaff;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
