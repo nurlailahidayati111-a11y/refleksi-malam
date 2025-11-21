@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essay – Refleksi Malam</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="night-mode">
+
+  <canvas id="stars"></canvas>
+  <audio id="ambient" src="assets/night-ambience.mp3" loop></audio>
+
+  <div id="navbar"></div>
+
+  <main>
+    <h1>Judul Essay</h1>
+    <article>
+      <p>Isi essay kamu di sini...</p>
+    </article>
+  </main>
+
+  <!-- Komentar -->
+  <div id="komentar-container"></div>
+
+  <!-- Scripts -->
+  <script src="transition.js"></script>
+  <script src="komentar.js"></script>
+
+  <!-- Load File Komentar -->
+  <script>
+    fetch("komentar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("komentar-container").innerHTML = html;
+      })
+      .catch(err => console.error("Error load komentar:", err));
+  </script>
+
+</body>
+</html>
